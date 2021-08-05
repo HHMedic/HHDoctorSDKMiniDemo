@@ -1,18 +1,31 @@
+import java.text.SimpleDateFormat
+
 plugins {
     id 'com.android.application'
 }
+
+static def increasedVersionCode() {
+    return (int) (System.currentTimeMillis() / 1000 / 60)
+}
+
+static def buildTime() {
+    def df = new SimpleDateFormat("MMddHH")
+    return df.format(new Date())
+}
+
+def baseVersion = "3.1.0"
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.hhmedic.sdk.demo"
+        applicationId "com.hhmedic.demo.trtc.meituan"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
+        versionCode increasedVersionCode()
+        versionName "$baseVersion.${buildTime()}"
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,6 +38,19 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    android.applicationVariants.all { variant ->
+
+        variant.outputs.all  {
+
+            outputFileName = "hh_android_trtc_meituan_demo_${defaultConfig.versionName}.apk"
+
+        }
     }
 }
 
@@ -40,7 +66,7 @@ dependencies {
     implementation "com.tencent.liteav:LiteAVSDK_TRTC:8.2.9809"
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
-    implementation 'com.hh-medic.android.sdk:hh_doctor:3.1.0.08031427'
+    implementation 'com.hh-medic.android.sdk:hh_doctor:3.1.0.08041308'
 
 
     testImplementation 'junit:junit:4.+'

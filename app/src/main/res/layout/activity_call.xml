@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CallAct">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hh_action_bar_height"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/Toolbar.Light"
+            app:titleTextColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/title_ext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/label_tip_ext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <EditText
+            android:id="@+id/edit_ext"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hint_ext"
+            app:layout_constraintTop_toBottomOf="@id/title_ext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="text"
+            android:layout_height="50dp"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/button_set_ext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginStart="@dimen/default_margin"
+            app:layout_constraintTop_toBottomOf="@id/edit_ext"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/button_set_ext"/>
+
+        <EditText
+            android:id="@+id/edit_userToken"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:hint="@string/tip_input_call_user_token"
+            app:layout_constraintTop_toBottomOf="@id/button_set_ext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="text"
+            android:layout_height="50dp"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/button_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginStart="@dimen/default_margin"
+            app:layout_constraintTop_toBottomOf="@id/edit_userToken"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/button_set_ext"/>
+
+        <Button
+            android:id="@+id/button_get_medic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginStart="@dimen/default_margin"
+            app:layout_constraintTop_toBottomOf="@id/button_call"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/button_get_medic_url"/>
+
+        <EditText
+            android:id="@+id/edit_medic_id"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hint_medic_id"
+            app:layout_constraintTop_toBottomOf="@id/button_get_medic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="text"
+            android:layout_height="50dp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/edit_forward_userToken"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hint_forward_user_token"
+            app:layout_constraintTop_toBottomOf="@id/edit_medic_id"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="text"
+            android:layout_height="50dp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/edit_url"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:minLines="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textIsSelectable="true"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/edit_forward_userToken"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

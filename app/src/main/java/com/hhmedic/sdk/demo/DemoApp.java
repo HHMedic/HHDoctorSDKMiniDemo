@@ -14,7 +14,7 @@ public class DemoApp extends Application {
     }
 
     private void initSDK() {
-        HHSDKOptions options = new HHSDKOptions("10350",true,new GlideImageLoader());
+        HHSDKOptions options = new HHSDKOptions(BaseConfig.DefaultSDKProductId,BaseConfig.isDevelop(this),new GlideImageLoader());
         HHDoctor.init(this,options);
     }
 }
