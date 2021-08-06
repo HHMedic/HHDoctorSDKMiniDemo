@@ -40,7 +40,7 @@ public class MainActivity extends BaseAct {
     }
     
     private void login() {
-        String userToken = mainBinding.userToken.getText().toString();
+        String userToken = mainBinding.userToken.getText().toString().trim();
         if (TextUtils.isEmpty(userToken)) {
             Toast.makeText(this, "请输入需要登录的UserToken", Toast.LENGTH_SHORT).show();
             return;
@@ -55,7 +55,7 @@ public class MainActivity extends BaseAct {
 
             @Override
             public void onError(String s) {
-
+                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
             }
         });
     }

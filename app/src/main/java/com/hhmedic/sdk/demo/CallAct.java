@@ -46,7 +46,7 @@ public class CallAct extends BaseAct {
     }
 
     private void getMedicUrl() {
-        String medicId = callBinding.editMedicId.getText().toString();
+        String medicId = callBinding.editMedicId.getText().toString().trim();
         String forwardUserToken = callBinding.editForwardUserToken.getText().toString();
         if (TextUtils.isEmpty(medicId)) {
             Toast.makeText(this, getString(R.string.hint_medic_id), Toast.LENGTH_SHORT).show();
@@ -62,7 +62,7 @@ public class CallAct extends BaseAct {
     }
 
     private void call() {
-        String userToken = callBinding.editUserToken.getText().toString();
+        String userToken = callBinding.editUserToken.getText().toString().trim();
         if (TextUtils.isEmpty(userToken)) {
 //            Toast.makeText(this, getString(R.string.tip_input_call_user_token), Toast.LENGTH_SHORT).show();
 //            return;
