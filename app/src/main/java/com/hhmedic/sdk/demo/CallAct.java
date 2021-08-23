@@ -72,28 +72,32 @@ public class CallAct extends BaseAct {
         HHDoctor.call(this, userToken, new HHCallListener() {
             @Override
             public void onStart(String s) {
-
+                toast("onStart");
             }
 
             @Override
             public void onFinish(long l) {
-
+                toast("onFinish");
             }
 
             @Override
             public void onCallSuccess() {
-
+                toast("onCallSuccess");
             }
 
             @Override
             public void onFail(int i) {
-
+                toast("onFail");
             }
 
             @Override
             public void onCancel() {
-
+                toast("onCancel");
             }
         });
+    }
+
+    private void toast(String call) {
+        Toast.makeText(this, call, Toast.LENGTH_SHORT).show();
     }
 }
