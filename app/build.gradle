@@ -67,7 +67,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
 //    implementation 'com.hh-medic.android.sdk:hh_doctor_mini_dev:3.1.0.08121834'
-    implementation 'com.hh-medic.android.sdk:hh_doctor:3.1.0.08231707'
+    implementation 'com.hh-medic.android.sdk:hh_doctor:3.1.0.08241639'
 
 
     testImplementation 'junit:junit:4.+'
