@@ -1,6 +1,7 @@
 package com.hhmedic.sdk.demo;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.hhmedic.android.sdk.HHDoctor;
 import com.hhmedic.android.sdk.config.HHSDKOptions;
@@ -14,7 +15,9 @@ public class DemoApp extends Application {
     }
 
     private void initSDK() {
-        HHSDKOptions options = new HHSDKOptions(BaseConfig.DefaultSDKProductId,BaseConfig.isDevelop(this),new GlideImageLoader());
+        boolean isDevelop = BaseConfig.isDevelop(this);
+        Log.e("isDevelop", "isDevelop=" + isDevelop);
+        HHSDKOptions options = new HHSDKOptions(BaseConfig.DefaultSDKProductId,isDevelop,new GlideImageLoader());
         HHDoctor.init(this,options);
     }
 }

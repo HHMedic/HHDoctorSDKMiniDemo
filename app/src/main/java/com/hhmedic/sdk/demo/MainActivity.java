@@ -62,6 +62,6 @@ public class MainActivity extends BaseAct {
 
     private void switchReload() {
         Toast.makeText(this, "切换设置后需要重启打开APP才会生效", Toast.LENGTH_SHORT).show();
-        new Handler(getMainLooper()).postDelayed(() -> MainActivity.this.finish(),1000);
+        new Handler(getMainLooper()).postDelayed(() -> System.exit(0),1000);
     }
 }
