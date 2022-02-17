@@ -66,8 +66,8 @@ dependencies {
     implementation "com.tencent.liteav:LiteAVSDK_TRTC:8.2.9809"
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
-//    implementation 'com.hh-medic.android.sdk:hh_doctor_mini_dev:3.1.0.08121834'
-    implementation 'com.hh-medic.android.sdk:hh_doctor:3.1.0.12071650'
+//    implementation 'com.hh-medic.android.sdk:hh_doctor_mini_dev:3.1.0.02151924'
+    implementation 'com.hh-medic.android.sdk:hh_doctor:3.1.0.02171016'
 
 
     testImplementation 'junit:junit:4.+'
